@@ -31,28 +31,13 @@ This project demonstrates a simple implementation of a semaphore mechanism using
   - `value_to_string`: Converts the `PING`/`PONG` semaphore value to a string for printing.
   - `print_timestamp`: Prints a timestamp for the operations.
   - `print_with_tag`: Prints messages with a timestamp and tag.
-  - `print_wait_message`: Prints a message indicating that the thread is waiting for 1 second.
+  - `print_wait_message`: Prints a message indicating that each thread is waiting for 1 second.
 - **Thread Functions:**
   - `thread1`: Toggles the semaphore from `PING` to `PONG`.
   - `thread2`: Toggles the semaphore from `PONG` to `PING`.
 - **Setup Function:** Initializes the serial communication, mutexes, and creates two tasks (`thread1` and `thread2`) to run concurrently. The FreeRTOS scheduler is started with `vTaskStartScheduler()`.
 
 
-Below is an example of the output
+Below is an image of the output
 
-```text
-Starting the Game!!!
-
-[0ms]: Thread-1 Trying to acquire mutex
-[0ms]: Thread-1 Acquired mutex
-[2ms]: Thread-1 Initial semaphore value: ping
-[9ms]: Thread-1 New value: pong
-[11ms]: Thread-1 Released mutex
-[16ms]: Thread-1 Waiting for 1 second
-[18ms]: Thread-2 Trying to acquire mutex
-[24ms]: Thread-2 Acquired mutex
-[32ms]: Thread-2 Initial semaphore value: pong
-[33ms]: Thread-2 New value: ping
-[39ms]: Thread-2 Released mutex
-[40ms]: Thread-2 Waiting for 1 second
-[1018ms]: Thread-1 Trying to acquire mutex
+![Output](https://github.com/user-attachments/assets/40e6c948-21db-4e95-ad64-4c21a4bd201f)
